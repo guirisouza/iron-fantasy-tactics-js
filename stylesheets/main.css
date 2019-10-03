@@ -1,0 +1,36 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+#battlefield-background {
+    display: flex;
+    border: solid red;
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-image: url("../images/background_death.png");
+    align-items: flex-end;
+    justify-content: center;
+    height: 80vh;
+    width: 200vh;
+}
+
+#board {
+    display: flex;
+    justify-content: space-between ;
+    border: solid blue;
+    height: 55vh;
+
+}
+
+.square {
+    display: block;
+    border: solid red;
+    width: 6vh;
+    height: 6vh;
+}
+
+#battlefield-background > p {
+    font-size: 100px;
+}
