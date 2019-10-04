@@ -37,6 +37,7 @@ class PersonJob {
         };
     attack(opponent) {
         console.log(opponent)
+        
         let dano = Math.floor(Math.random()*(this.damage[0], this.damage[1]));
         opponent.healthPoints -=  dano;
         return dano    

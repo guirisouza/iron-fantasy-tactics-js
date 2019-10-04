@@ -1,6 +1,14 @@
+@font-face {
+    src: url(../fft.ttf);
+    font-family: fft;
+}
+
 body {
     padding: 0px;
     margin: 0px;
+    color: white;
+    font-family: fft;
+    font-size: 50px;
 }
 
 #battlefield-background {
@@ -42,7 +50,7 @@ body {
 }
 
 .move {
-    background: blue;
+    background: rgba(0, 0, 255, 0.6);
     border-radius: 5px;
 }
 
@@ -50,7 +58,7 @@ body {
 #player-one{
     position: absolute;
     border: 1px solid black;
-    background-image: linear-gradient(to bottom right, red, yellow);
+    background-image: linear-gradient(to bottom right, black, gray);
     border-radius: 7px;
     height: 40vh;
     width: 40vh;
@@ -66,4 +74,44 @@ body {
     width: 40vh;
     margin-left: 72vh;
     margin-top: -40vh;
+}
+
+.option-move {
+    visibility: hidden;
+    font-size: 7.5vh;
+    display: flex;
+    position: relative; top: -4vh; right: -3vh ;;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    background-size: cover;
+    height: 3vh;
+    width: 7vh;
+    border-radius: 10px;
+}
+
+.option-move > p {
+    padding-bottom: 2.5vh;
+    padding-left: 0.5vh;
+}
+
+.option-attack {
+    visibility: hidden;
+    font-size: 7.5vh;
+    display: flex;
+    position: relative; top: -3vh; right: -7vh ;;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    background-size: cover;
+    height: 3vh;
+    width: 8.5vh;
+    border-radius: 10px;
+}
+
+.option-attack > p {
+    padding-bottom: 2.5vh;
+    padding-left: 0.5vh;
 }
