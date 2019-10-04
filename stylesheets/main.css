@@ -12,25 +12,58 @@ body {
     background-image: url("../images/background_death.png");
     align-items: flex-end;
     justify-content: center;
-    height: 80vh;
+    height: 100vh;
     width: 200vh;
 }
 
 #board {
     display: flex;
-    justify-content: space-between ;
+    flex-direction: column;
     border: solid blue;
-    height: 55vh;
 
+}
+
+.line {
+    display: flex;
+    line-height: 7vh;
+    /* border: 1px solid yellow; */
+    margin: 2px;
 }
 
 .square {
     display: block;
-    border: solid red;
+    /* border: solid red; */
     width: 6vh;
     height: 6vh;
 }
 
-#battlefield-background > p {
-    font-size: 100px;
+.hascharacter {
+    background: red;
+}
+
+.move {
+    background: blue;
+    border-radius: 5px;
+}
+
+
+#player-one{
+    position: absolute;
+    border: 1px solid black;
+    background-image: linear-gradient(to bottom right, red, yellow);
+    border-radius: 7px;
+    height: 40vh;
+    width: 40vh;
+    margin-left: -72vh;
+    margin-top: -40vh;
+}
+
+#player-two{
+    position: absolute;
+    border: solid black;
+    border-radius: 7px;
+    height: 40vh;
+    width: 40vh;
+    margin-left: 72vh;
+    margin-top: -40vh;
 }

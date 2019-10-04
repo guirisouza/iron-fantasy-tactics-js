@@ -73,7 +73,6 @@ class PersonJob {
                 matrix[i][position[1]] = this.checkSquareIsWalkable([i,position[1]], matrix)
             }
         }
-        console.log('posição do ob',this.position)
     }
 
     range(range, matrix){
@@ -183,7 +182,7 @@ class Game {
                 }
             }
         }
-    return battleField
+        return battleField
     }
 }
 
