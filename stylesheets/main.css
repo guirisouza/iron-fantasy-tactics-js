@@ -54,6 +54,10 @@ body {
     border-radius: 5px;
 }
 
+.move:hover {
+    background: rgba(47, 209, 96, 0.6);
+}
+
 
 #player-one{
     position: absolute;
