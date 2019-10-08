@@ -37,7 +37,7 @@ class PersonJob {
         };
     attack(opponent) {
         console.log(opponent)
-        
+
         let dano = Math.floor(Math.random()*(this.damage[0], this.damage[1]));
         opponent.healthPoints -=  dano;
         return dano    
@@ -53,6 +53,13 @@ class PersonJob {
         }else{
             return 'x'
         } 
+    }
+
+    moveAct(oldPosition,newPosition, matrix){
+        console.log(oldPosition)
+        console.log(newPosition)
+        let char = matrix[oldPosition[0]][oldPosition[1]]
+        matrix[newPosition[0]][newPosition[1]] = char
     }
 
     vertRange(range, matrix) {
@@ -108,9 +115,11 @@ class PersonJob {
 }
 
 class Game {
-    constructor(turn, phase) {
+    constructor(turn, phase, round, movesChars) {
         this.turn = 0
         this.round = 0
+        this.round = 0
+        this.moves = {}
     }
     startGame() {
         //Characters obj creating
@@ -127,6 +136,10 @@ class Game {
 
         //array with all 10 characters
         let playerOne = [squire, thief, whiteMage, blackMage, lancer, knight, bard, archer, monk, paladin]
+
+        //phase list players
+        let playerOnePhase = []
+        let playerTwoPhase = []
 
         //randomize all characters
         for (let i=0; i < playerOne.length; i++) {
@@ -169,7 +182,8 @@ class Game {
             if(i >= 4) {
                 if(playerOne.length > 0){
                     index = catchListItem(playerOne)
-                    battleField[i][battleField[1].length - 1] = playerOne[index]        
+                    battleField[i][battleField[1].length - 1] = playerOne[index] 
+                    playerOnePhase.push(playerOne[index])
                     playerOne[index].position[0] = i
                     playerOne[index].position[1] = battleField[1].length - 1
                     playerOne.splice(playerOne.indexOf(playerOne[index]),1)
@@ -177,13 +191,14 @@ class Game {
                 if(playerTwo.length > 0){
                     index = catchListItem(playerTwo)
                     battleField[i][0] = playerTwo[index]
+                    playerTwoPhase.push(playerTwo[index])
                     playerTwo[index].position[0] = i
                     playerTwo[index].position[1] = 0
                     playerTwo.splice(playerTwo.indexOf(playerTwo[index]),1)
                 }
             }
         }
-        return battleField
+        return {'battlefied':battleField, 'playerOnePhase':playerOnePhase, 'playerTwoPhase':playerTwoPhase};
     }
 }
 

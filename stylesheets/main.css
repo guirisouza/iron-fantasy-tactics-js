@@ -46,7 +46,9 @@ body {
 }
 
 .hascharacter {
-    background: red;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../images/class-persons-images-sprites/lancer-1.png')
 }
 
 .move {
@@ -61,6 +63,7 @@ body {
 
 #player-one{
     position: absolute;
+    display: flex;
     border: 1px solid black;
     background-image: linear-gradient(to bottom right, black, gray);
     border-radius: 7px;
@@ -68,6 +71,22 @@ body {
     width: 40vh;
     margin-left: -72vh;
     margin-top: -40vh;
+    justify-content: space-between;
+}
+
+.status {
+    /* border: solid blue; */
+    display: flex;
+    justify-content: space-around;
+    height: 30vh;
+    padding: left 3vh;
+    width:  39vh;
+    margin-top: 10vh;   
+}
+
+.status #status-child-left {
+    /* border: solid yellow; */
+    padding-top: 2vh;
 }
 
 #player-two{
